@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kudzai Nevanji – AI / Machine Learning Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef1f5;--surface:#fbfcfd;--ink:#101a2e;--muted:#56637a;--line:#d3dae4;--accent:#2347d9;
+  --allow:#2f9e6e;--confirm:#d6a516;--mfa:#e0762b;--block:#d23b4a;
+  --head:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1624;--surface:#161f31;--ink:#e8edf6;--muted:#9aa7bd;--line:#2a3650;--accent:#7e9bff;
+  --allow:#46c08e;--confirm:#e8bd3a;--mfa:#f08d46;--block:#f0606d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1624;--surface:#161f31;--ink:#e8edf6;--muted:#9aa7bd;--line:#2a3650;--accent:#7e9bff;
+  --allow:#46c08e;--confirm:#e8bd3a;--mfa:#f08d46;--block:#f0606d;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+nav b{font:700 18px var(--head)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav li a{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
+nav li a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0}
+h1{font-size:clamp(46px,9vw,104px);font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
+h3{font-size:21px;font-weight:700}
+section{padding:84px 0 0}
+.hero{padding-top:56px}
+.role{font:500 clamp(18px,2.4vw,24px) var(--head);color:var(--muted);margin:14px 0 0}
+.lede{max-width:56ch;margin:22px 0 0;color:var(--muted);font-size:19px}
+.cv{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.cv a{display:inline-block;padding:10px 20px;border-radius:10px;font:500 16px var(--body);text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}.cv a:first-child{background:var(--ink);color:var(--bg)}.cv a:hover{border-color:var(--accent)}.contact .cv a{border-color:var(--bg);color:var(--bg)}.contact .cv a:first-child{background:var(--bg);color:var(--ink)}
+.chart{margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.chart header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-bottom:10px}
+.chart header p{margin:0;font-size:15px;color:var(--muted);max-width:60ch}
+#verdict{font:700 22px var(--head);transition:color .2s}
+svg{width:100%;height:auto;display:block}
+.ctl{display:flex;align-items:center;gap:14px;margin-top:12px;font-size:15px;color:var(--muted)}
+.ctl input{flex:1;accent-color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-top:1px solid var(--line);margin-top:30px}
+.stats div{padding:18px 20px 0 0}
+.stats strong{display:block;font:700 22px var(--head)}
+.stats span{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.item{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.item:last-child{border:0;margin:0}
+.when{color:var(--muted);font-size:15px;margin:2px 0 8px}
+.item ul{margin:10px 0 0;padding-left:20px}
+.item li{margin-bottom:6px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;margin-bottom:24px}
+.proj .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
+.proj h4{margin:0 0 4px;font:700 16px var(--head)}
+.proj p{margin:0 0 14px}
+.sub{color:var(--muted);margin:6px 0 0}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:22px 0 0;font-size:14px}
+.flow span{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.flow em{align-self:center;color:var(--muted);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 13px;font-size:15px}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:18px 24px;align-items:start}
+.skills h3{font-size:16px;color:var(--muted);padding-top:5px}
+.pub{padding:22px 0;border-top:1px solid var(--line)}
+.pub p{margin:4px 0}
+.tag{display:inline-block;font-size:14px;color:var(--muted)}
+.contact{background:var(--ink);color:var(--bg);border-radius:18px;padding:48px;margin-top:84px}
+.contact h2{margin-bottom:10px}
+.contact a{color:var(--bg)}
+.contact .big{font:700 clamp(22px,4vw,34px) var(--head);display:block;margin-top:14px;overflow-wrap:anywhere}
+.contact p{margin:6px 0;opacity:.85}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer}
+@media (max-width:760px){.two,.proj .cols{grid-template-columns:1fr}.skills{grid-template-columns:1fr;gap:6px}.skills h3{padding:10px 0 0}nav ul{display:none}.contact{padding:30px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Kudzai Nevanji</b>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#research">Publications</a></li><li><a href="#contact">Contact</a></li></ul>
+<button id="theme" aria-label="Toggle light or dark theme">Theme</button></div></nav>
+
+<main class="wrap">
+<section class="hero" id="top">
+  <h1>Kudzai Nevanji</h1>
+  <p class="role">AI / Machine Learning Engineer and IoT Security Researcher</p>
+  <p class="lede">I build behaviour-aware, anomaly-detecting AI systems for secure smart homes and high-performance data infrastructure.</p>
+  <div class="cv"><a href="cv/Kudzai_Nevanji_CV_EN.pdf" target="_blank" rel="noopener">CV (English, PDF)</a><a href="cv/Kudzai_Nevanji_CV_KR.pdf" target="_blank" rel="noopener">이력서 (한국어, PDF)</a></div>
+
+  <div class="chart" role="group" aria-label="Interactive demo of graduated response">
+    <header>
+      <p>The idea behind my main research: a model scores how unusual each device action is, and the hub responds in proportion. Drag the slider to set a score.</p>
+      <div id="verdict" aria-live="polite">Allow</div>
+    </header>
+    <svg id="plot" viewBox="0 0 800 240" role="img" aria-label="Deviation score over a sequence of device events, with four response bands"></svg>
+    <div class="ctl"><label for="s">Deviation score</label><input id="s" type="range" min="0" max="100" value="12"><output id="o">0.12</output></div>
+    <div class="legend"><span><i style="background:var(--allow)"></i>Allow</span><span><i style="background:var(--confirm)"></i>Confirm</span><span><i style="background:var(--mfa)"></i>Require MFA</span><span><i style="background:var(--block)"></i>Block</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p style="max-width:68ch">I am an M.S. Computer Engineering researcher at Ajou University, specialising in deep-learning-based anomaly detection for IoT security. I design, train and deploy LSTM-autoencoder models and wrap them in policy engines that turn model output into real access-control decisions. My work covers the full path from research idea to a Dockerised, Linux-hosted system, and has produced two IEEE Access papers. I am self-motivated, thrive under deadlines, adapt quickly to new environments, and work well in multicultural teams.</p>
+  <div class="stats">
+    <div><strong>M.S. Computer Engineering</strong><span>Ajou University, 2024–2026</span></div>
+    <div><strong>2 IEEE Access papers</strong><span>One first-author, one co-author</span></div>
+    <div><strong>2 research projects</strong><span>2024–2026</span></div>
+    <div><strong>3 languages</strong><span>English, Korean, Sign language</span></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience and education</h2>
+  <div class="two">
+    <div>
+      <div class="item">
+        <h3>Graduate Research Assistant</h3>
+        <p class="when">DBDC Lab, Ajou University · Sep 2024 – Aug 2026</p>
+        <ul>
+          <li>Designed and implemented a behaviour-based security framework that learns normal usage of a Matter smart-home hub with an LSTM autoencoder and detects abnormal commands.</li>
+          <li>Built the Behavioural Intent Verification module, converting reconstruction error into a deviation score, plus a tiered policy engine (Allow / Confirm / MFA / Block).</li>
+          <li>Developed and trained models in Python (TensorFlow, PyTorch); deployed and evaluated them on Linux servers with Docker.</li>
+          <li>First author of an IEEE Access paper (revised and resubmitted, 2026); co-author of an IEEE Access paper on cross-layer caching.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>IT Attaché (Intern)</h3>
+        <p class="when">Chitungwiza Municipality, Zimbabwe · Jul 2020 – Jun 2021</p>
+        <ul>
+          <li>Delivered end-to-end IT support: hardware and software installation, network and internet troubleshooting, staff technical support.</li>
+          <li>Managed the organisation’s WordPress website; installed and configured the SAGE Evolution database system.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="item">
+        <h3>M.S. Computer Engineering</h3>
+        <p class="when">Ajou University, Suwon · Sep 2024 – Aug 2026</p>
+        <p>Research focus: IoT security and anomaly detection, including a behaviour-aware policy engine for Matter smart homes.</p>
+      </div>
+      <div class="item">
+        <h3>B.Sc. Business Studies and Computer Engineering</h3>
+        <p class="when">University of Zimbabwe · Feb 2018 – Feb 2022</p>
+        <p>Graduated with Honours, Upper Second Class (2.1).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="proj">
+    <h3>Behaviour verification for Matter hubs</h3>
+    <p class="sub">2024–2026 · An LSTM-autoencoder security layer for smart-home hubs</p>
+    <div class="flow" aria-label="System pipeline"><span>Device event logs</span><em>→</em><span>LSTM autoencoder learns normal patterns</span><em>→</em><span>Reconstruction error per sequence</span><em>→</em><span>Deviation score</span><em>→</em><span>Policy engine: Allow, Confirm, MFA, Block</span></div>
+    <div class="cols">
+      <div><h4>Problem</h4><p>Matter protects smart homes with authentication and ACL permissions, but an authenticated device or account can still behave abnormally. Permissions alone cannot tell whether an action fits the user’s normal pattern.</p>
+      <h4>Approach</h4><p>Learn what normal looks like from device event logs, score how far new behaviour deviates, and respond proportionally instead of a binary allow or deny.</p></div>
+      <div><h4>Key contributions</h4><ul style="margin:0 0 14px;padding-left:20px"><li>A behaviour-aware layer that complements Matter’s authentication and ACL model.</li><li>A reconstruction-error to deviation-score mapping (Behavioural Intent Verification).</li><li>A four-level policy engine balancing security and convenience.</li><li>Python implementation (TensorFlow / PyTorch), deployed with Docker on Linux.</li></ul>
+      <ul class="chips"><li>Python</li><li>TensorFlow</li><li>PyTorch</li><li>LSTM autoencoder</li><li>Docker</li><li>Linux</li></ul></div>
+    </div>
+  </article>
+  <article class="proj">
+    <h3>Cross-layer caching for HPC</h3>
+    <p class="sub">2025–2026 · Experimental evaluation of Alluxio and Ceph tiering under HACC-IO</p>
+    <div class="flow" aria-label="Storage architecture"><span>Application / HACC-IO workload</span><em>⇅</em><span>Alluxio cache tier (via FUSE)</span><em>⇅</em><span>Ceph distributed storage tier</span></div>
+    <div class="cols">
+      <div><h4>Problem</h4><p>HPC workloads put heavy, mixed read and write pressure on storage. Where data lives across cache and storage tiers strongly affects both read efficiency and write throughput.</p>
+      <h4>Approach</h4><p>Evaluate Alluxio (cache) and Ceph (storage) tiering with the HACC-IO workload, and test whether a hybrid design with intelligent data placement can optimise both.</p></div>
+      <div><h4>Key contributions</h4><ul style="margin:0 0 14px;padding-left:20px"><li>Experimental evaluation of Alluxio and Ceph tiering on HACC-IO workloads.</li><li>Showed a hybrid cross-layer design with intelligent placement improves both read efficiency and write throughput.</li><li>Linux-based experiment environment using FUSE.</li></ul>
+      <ul class="chips"><li>Alluxio</li><li>Ceph</li><li>FUSE</li><li>HACC-IO</li><li>Linux</li></ul></div>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>C++</li><li>C#</li><li>JavaScript (Node.js)</li><li>SQL</li></ul>
+    <h3>AI / ML</h3><ul class="chips"><li>TensorFlow</li><li>PyTorch</li><li>LSTM / Autoencoders</li><li>Anomaly detection</li><li>NLP</li><li>Computer vision</li><li>Deep learning</li></ul>
+    <h3>Backend / APIs</h3><ul class="chips"><li>FastAPI</li><li>REST APIs</li><li>Node.js</li></ul>
+    <h3>Data / Infra</h3><ul class="chips"><li>Linux</li><li>Docker</li><li>Git</li><li>PostgreSQL</li><li>Alluxio</li><li>Ceph</li></ul>
+    <h3>IoT / Security</h3><ul class="chips"><li>Matter</li><li>Smart-home protocols</li><li>Embedded security</li><li>Access control (ACL / MFA)</li></ul>
+    <h3>LLM tooling</h3><ul class="chips"><li>Prompt engineering (ChatGPT, Claude)</li><li>LLM application development</li></ul>
+  </div>
+  <p class="sub" style="margin-top:28px">Languages spoken: English (native), Korean (intermediate), Sign language. Outside work I enjoy travel, reading, and helping friends and family with tech.</p>
+</section>
+
+<section id="research">
+  <h2>Publications</h2>
+  <div class="pub">
+    <span class="tag">First author · Under revision</span>
+    <h3>Behaviour-Aware Access Control for Matter Hubs via LSTM-AE-Based Deviation Scoring</h3>
+    <p>K. Nevanji, P. Hamandawana, T.-S. Chung · IEEE Access, 2026 (revised and resubmitted)</p>
+  </div>
+  <div class="pub">
+    <span class="tag">Co-author · Published</span>
+    <h3>Cross-Layer Caching for High-Performance Computing: Experimental Analysis of Alluxio, Ceph Tiering, and Hybrid Designs Using HACC-IO Traces</h3>
+    <p>B. J. Siwonde, P. Hamandawana, K. Nevanji, T.-S. Chung · IEEE Access, February 2026 · <a href="https://doi.org/10.1109/ACCESS.2026.3664402" target="_blank" rel="noopener">doi.org/10.1109/ACCESS.2026.3664402</a></p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let’s talk</h2>
+  <p>I am looking for AI and machine learning engineering roles where research-grade modelling meets production systems.</p>
+  <div class="cv"><a href="cv/Kudzai_Nevanji_CV_EN.pdf" target="_blank" rel="noopener">CV (English, PDF)</a><a href="cv/Kudzai_Nevanji_CV_KR.pdf" target="_blank" rel="noopener">이력서 (한국어, PDF)</a></div>
+  <a class="big" href="mailto:kudzainevanji23@gmail.com">kudzainevanji23@gmail.com</a>
+  <a class="big" href="tel:+821059317730">+82 10-5931-7730</a>
+  <p style="margin-top:22px">Based in Suwon-si, South Korea.</p>
+  <p>Reference: Prof. Tae-Sun Chung, Department of Software, Ajou University · +82 10-4338-6068 · <a href="mailto:tschung@ajou.ac.kr">tschung@ajou.ac.kr</a></p>
+</section>
+</main>
+<footer><div class="wrap">© 2026 Kudzai Nevanji</div></footer>
+
+<script>
+(function(){
+  var svg=document.getElementById('plot'),W=800,H=240,P=28,NS='http://www.w3.org/2000/svg';
+  var bands=[['--allow','Allow'],['--confirm','Confirm'],['--mfa','MFA'],['--block','Block']];
+  var plotH=H-2*P/2-10, top=10;
+  function y(v){return top+(1-v)*plotH}
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+  bands.forEach(function(b,i){
+    el('rect',{x:0,y:y((i+1)*.25),width:W,height:plotH*.25,fill:'var('+b[0]+')','fill-opacity':.14});
+    el('text',{x:W-8,y:y(i*.25)-8,'text-anchor':'end','font-size':12,fill:'var(--muted)'}).textContent=b[1];
+  });
+  var pts=[],n=60,seed=7;
+  function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+  for(var i=0;i<n;i++){
+    var v=.08+r()*.1;
+    if(i>=38&&i<=46)v=.3+(i-38)*.075+r()*.05;
+    if(i>46)v=Math.max(.1,.82-(i-46)*.08+r()*.05);
+    pts.push([i/(n-1)*W,y(Math.min(v,.97))]);
+  }
+  var d='M'+pts.map(function(p){return p[0].toFixed(1)+' '+p[1].toFixed(1)}).join(' L');
+  var line=el('path',{d:d,fill:'none',stroke:'var(--accent)','stroke-width':2.5,'stroke-linejoin':'round'});
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var L=line.getTotalLength();line.style.strokeDasharray=L;line.style.strokeDashoffset=L;
+    line.getBoundingClientRect();line.style.transition='stroke-dashoffset 2.2s ease-out';line.style.strokeDashoffset=0;
+  }
+  var mark=el('line',{x1:0,x2:W,stroke:'var(--ink)','stroke-width':1.5,'stroke-dasharray':'5 4'});
+  var s=document.getElementById('s'),o=document.getElementById('o'),vd=document.getElementById('verdict');
+  function upd(){
+    var v=s.value/100,i=Math.min(3,Math.floor(v/.25));
+    mark.setAttribute('y1',y(v));mark.setAttribute('y2',y(v));
+    o.textContent=v.toFixed(2);
+    vd.textContent=['Allow','Ask user to confirm','Require MFA','Block'][i];
+    vd.style.color='var('+bands[i][0]+')';
+  }
+  s.addEventListener('input',upd);upd();
+
+  var t=document.getElementById('theme'),root=document.documentElement;
+  t.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+    root.setAttribute('data-theme',dark?'light':'dark');upd();
+  });
+})();
+</script>
+</body>
+</html>
